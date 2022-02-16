@@ -1,0 +1,8 @@
+//
+// Created by Mykhailo Petrenko on 16.02.2022.
+//
+
+#ifndef RAYCASTER_IN_HET_WEEKEND_GENERATE_TEST_PPM_H
+#define RAYCASTER_IN_HET_WEEKEND_GENERATE_TEST_PPM_H
+void generate_test_ppm();
+#endif //RAYCASTER_IN_HET_WEEKEND_GENERATE_TEST_PPM_H

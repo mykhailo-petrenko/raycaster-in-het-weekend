@@ -1,15 +1,20 @@
 #include <iostream>
+#include <fstream>
+
+using namespace std;
 
 int project(float c) {
     return int(255.99 * c);
 }
 
-int main() {
+void generate_test_ppm() {
+    ofstream test_ppm;
+    test_ppm.open("./test.ppm");
 
     int NX = 256;
     int NY = 256;
 
-    std::cout << "P3\n" << NX << " " << NY << "\n255\n";
+    test_ppm << "P3\n" << NX << " " << NY << "\n255\n";
 
     for (int y = 0; y < NY; y++) {
         for (int x = 0; x < NX; x++) {
@@ -21,9 +26,9 @@ int main() {
             int G = project(g);
             int B = project(b);
 
-            std::cout << R << " " << G << " " << B << "\n";
+            test_ppm << R << " " << G << " " << B << "\n";
         }
     }
 
-    return 0;
+    test_ppm.close();
 }
