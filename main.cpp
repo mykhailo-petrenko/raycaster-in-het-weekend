@@ -1,7 +1,7 @@
 #include <iostream>
 #include <glm/vec3.hpp>
 
-#include "generate_test_ppm.h";
+#include "generate-ppm.h"
 
 int main() {
     glm::vec3 v = glm::vec3(1., 1., 1.);

@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(raycaster_in_het_weekend
         generate-ppm.cpp
-        main.cpp generate_test_ppm.h)
+        generate-ppm.h
+        main.cpp)
 
 add_subdirectory(glm)
 target_link_libraries(raycaster_in_het_weekend glm::glm)
