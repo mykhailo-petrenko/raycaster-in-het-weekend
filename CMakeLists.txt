@@ -8,8 +8,8 @@ add_executable(raycaster_in_het_weekend
         generate-ppm.h
         main.cpp)
 
-add_subdirectory(glm)
-target_link_libraries(raycaster_in_het_weekend glm::glm)
+#add_subdirectory(glm)
+#target_link_libraries(raycaster_in_het_weekend glm::glm)
 #target_include_directories(raycaster_in_het_weekend glm)
 
 #find_package(glm REQUIRED)
