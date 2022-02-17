@@ -45,14 +45,18 @@ SETTINGS ${settings}
 ##############################  END COANAN bottstrap
 
 find_package(glm REQUIRED)
+find_package(spdlog REQUIRED)
 
-add_executable(raycaster_in_het_weekend
+set(EXE raycaster_in_het_weekend)
+
+add_executable(${EXE}
         generate-ppm.cpp
         generate-ppm.h
         main.cpp)
 
+target_link_libraries(${EXE} glm::glm spdlog::spdlog)
+
 #add_subdirectory(glm)
-#target_link_libraries(raycaster_in_het_weekend glm::glm)
 #target_include_directories(raycaster_in_het_weekend glm)
 
 #find_package(glm REQUIRED)
