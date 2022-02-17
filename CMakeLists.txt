@@ -52,7 +52,7 @@ set(EXE raycaster_in_het_weekend)
 add_executable(${EXE}
         generate-ppm.cpp
         generate-ppm.h
-        main.cpp)
+        main.cpp ray.cpp ray.h)
 
 target_link_libraries(${EXE} glm::glm spdlog::spdlog)
 

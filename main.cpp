@@ -5,6 +5,13 @@
 #include <glm/vec3.hpp>
 
 #include "generate-ppm.h"
+#include "ray.h"
+
+using namespace glm;
+
+vec3 lerp(const vec3 from, const vec3 to, float k) {
+    return (1 - k) * from + k * to;
+}
 
 int main() {
     auto console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
