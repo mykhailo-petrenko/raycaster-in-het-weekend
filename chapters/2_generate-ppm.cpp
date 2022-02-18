@@ -3,13 +3,11 @@
 
 using namespace std;
 
-int project(float c) {
-    return int(255.99 * c);
-}
+#include "../util.h"
 
 void generate_test_ppm() {
     ofstream test_ppm;
-    test_ppm.open("./test.ppm");
+    test_ppm.open("./artifacts/test.ppm");
 
     int NX = 256;
     int NY = 256;
@@ -22,9 +20,9 @@ void generate_test_ppm() {
             float g = float(y) / float(NY);
             float b = 0.2;
 
-            int R = project(r);
-            int G = project(g);
-            int B = project(b);
+            int R = project_color(r);
+            int G = project_color(g);
+            int B = project_color(b);
 
             test_ppm << R << " " << G << " " << B << "\n";
         }
