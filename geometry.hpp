@@ -26,4 +26,16 @@ public:
 };
 
 
+class Sphere {
+public:
+    Sphere() {}
+    Sphere(const vec3 c, const float r) {
+        center = c;
+        radius = r;
+    }
+
+    vec3 center;
+    float radius;
+};
+
 #endif //RAYCASTER_IN_HET_WEEKEND_RAY_HPP

@@ -18,3 +18,25 @@ color3 project_color_vector(vec3 c) {
             project_color(c[2])
             );
 }
+
+bool quad_equation_has_solution(float a, float b, float c) {
+    float D = b*b - (4*a*c);
+
+    return (D >= 0);
+}
+
+vec<2, float> quad_equation(float a, float b, float c) {
+    float D = sqrt(b*b - (4*a*c));
+
+    return vec<2, float>(
+            (-b + D) / (2 * a),
+            (-b - D) / (2 * a)
+            );
+}
+
+color3 color(Ray r) {
+    double t = (r.direction.y + 1.) / 2.;
+    vec3 c = lerp(WHITE, BLUE, t);
+
+    return project_color_vector(c);
+}

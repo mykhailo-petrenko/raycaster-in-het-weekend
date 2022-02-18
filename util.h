@@ -6,7 +6,7 @@
 #define RAYCASTER_IN_HET_WEEKEND_UTIL_H
 
 #include <glm/vec3.hpp>
-#include "ray.hpp"
+#include "geometry.hpp"
 
 using namespace glm;
 
@@ -33,5 +33,29 @@ int project_color(float c);
  * @return
  */
 color3 project_color_vector(vec3 c);
+
+/**
+ * Check if the quadratic equation has the solution
+ * a * x^2 + b * x + c = 0
+ * @param a
+ * @param b
+ * @param c
+ * @return
+ */
+bool quad_equation_has_solution(float a, float b, float c);
+
+/**
+ * Solve quadratic equation and returns two solutions.
+ * @param a
+ * @param b
+ * @param c
+ * @return
+ */
+vec<2, float> quad_equation(float a, float b, float c);
+
+color3 color(Ray r);
+
+const vec3 WHITE = vec3(1., 1., 1.);
+const vec3 BLUE = vec3(0.2, 0.5, 1.);
 
 #endif //RAYCASTER_IN_HET_WEEKEND_UTIL_H

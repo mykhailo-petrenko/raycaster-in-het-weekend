@@ -5,16 +5,6 @@
 #include <fstream>
 #include "../util.h"
 
-const vec3 WHITE = vec3(1., 1., 1.);
-const vec3 BLUE = vec3(0.2, 0.5, 1.);
-
-color3 color(Ray r) {
-    double t = (r.direction.y + 1.) / 2.;
-    vec3 c = lerp(WHITE, BLUE, t);
-
-    return project_color_vector(c);
-}
-
 void chapter3_ray_and_background() {
     std::ofstream image;
     image.open("./artifacts/chapter3.ppm");
