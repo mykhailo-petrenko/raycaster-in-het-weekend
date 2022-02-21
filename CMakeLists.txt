@@ -61,9 +61,11 @@ add_executable(${EXE}
 #        chapters/3_ray_and_background.h
 #        chapters/4_ray_and_sphere.cpp
 #        chapters/4_ray_and_sphere.h
-        chapters/5_surface_normals.cpp
-        chapters/5_surface_normals.h
-        )
+#        chapters/5_surface_normals.cpp
+#        chapters/5_surface_normals.h
+        chapters/6_antialiasing.cpp
+        chapters/6_antialiasing.h
+        camera.cpp camera.h)
 
 target_link_libraries(${EXE} glm::glm spdlog::spdlog)
 

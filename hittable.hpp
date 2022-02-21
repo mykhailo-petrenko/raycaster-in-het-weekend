@@ -6,7 +6,7 @@
 #define RAYCASTER_IN_HET_WEEKEND_HITTABLE_HPP
 
 #include <glm/vec3.hpp>
-#include "geometry.hpp"
+#include <glm/geometric.hpp>
 
 using namespace glm;
 

@@ -3,7 +3,8 @@
 
 //#include "chapters/3_ray_and_background.h"
 //#include "chapters/4_ray_and_sphere.h"
-#include "chapters/5_surface_normals.h"
+//#include "chapters/5_surface_normals.h"
+#include "chapters/6_antialiasing.h"
 
 
 int main() {
@@ -23,8 +24,11 @@ int main() {
 //    SPDLOG_INFO("Ray and Sphere");
 //    chapter4_ray_and_sphere();
 
-    SPDLOG_INFO("Surface Normals");
-    chapter5::chapter5_surface_normals();
+//    SPDLOG_INFO("Surface Normals");
+//    chapter5::chapter5_surface_normals();
+
+    SPDLOG_INFO("Antialiasing");
+    chapter6::chapter6_antialiasing();
 
     return 0;
 }
