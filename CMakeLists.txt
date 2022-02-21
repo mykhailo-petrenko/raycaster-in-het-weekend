@@ -54,13 +54,16 @@ add_executable(${EXE}
         geometry.hpp
         util.cpp
         util.h
-        chapters/2_generate-ppm.cpp
-        chapters/2_generate-ppm.h
-        chapters/3_ray_and_background.cpp
-        chapters/3_ray_and_background.h
-        chapters/4_ray_and_sphere.cpp
-        chapters/4_ray_and_sphere.h
-        chapters/4_ray_and_sphere.h)
+        hittable.hpp
+#        chapters/2_generate-ppm.cpp
+#        chapters/2_generate-ppm.h
+#        chapters/3_ray_and_background.cpp
+#        chapters/3_ray_and_background.h
+#        chapters/4_ray_and_sphere.cpp
+#        chapters/4_ray_and_sphere.h
+        chapters/5_surface_normals.cpp
+        chapters/5_surface_normals.h
+        )
 
 target_link_libraries(${EXE} glm::glm spdlog::spdlog)
 

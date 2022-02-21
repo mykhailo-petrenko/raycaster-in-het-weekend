@@ -15,7 +15,7 @@
  * @param sphere sphere
  * @return
  */
-float ray_with_sphere_intersection(Ray r, Sphere sphere) {
+float ray_with_sphere_intersection_depth(Ray r, Sphere sphere) {
     float a = dot(r.direction, r.direction);
     float b = 2. * dot(r.direction, r.origin - sphere.center);
     float c = dot(r.origin - sphere.center, r.origin - sphere.center) - (sphere.radius * sphere.radius);
@@ -64,13 +64,13 @@ void chapter4_ray_and_sphere() {
             double t = (ray.direction.y + 1.) / 2.;
             vec3 c = lerp(WHITE, BLUE, t);
 
-            float k1 = ray_with_sphere_intersection(ray, sphere1);
+            float k1 = ray_with_sphere_intersection_depth(ray, sphere1);
             c = lerp(c, vec3(1.,0.,0.), k1);
 
-            float k2 = ray_with_sphere_intersection(ray, sphere2);
+            float k2 = ray_with_sphere_intersection_depth(ray, sphere2);
             c = lerp(c, vec3(0.,1.,0.), k2);
 
-            float k3 = ray_with_sphere_intersection(ray, sphere3);
+            float k3 = ray_with_sphere_intersection_depth(ray, sphere3);
             c = lerp(c, vec3(0.,0.,1.), k3);
 
             color3 rgb = project_color_vector(c);

@@ -7,7 +7,7 @@ using namespace std;
 
 void generate_test_ppm() {
     ofstream test_ppm;
-    test_ppm.open("./artifacts/test.ppm");
+    test_ppm.open("./artifacts/chapter2.ppm");
 
     int NX = 256;
     int NY = 256;

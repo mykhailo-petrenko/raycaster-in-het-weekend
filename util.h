@@ -34,6 +34,8 @@ int project_color(float c);
  */
 color3 project_color_vector(vec3 c);
 
+vec3 project_normal_to_color(vec3 n);
+
 /**
  * Check if the quadratic equation has the solution
  * a * x^2 + b * x + c = 0
