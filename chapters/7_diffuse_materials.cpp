@@ -6,14 +6,14 @@
 #include "../util.h"
 #include "../camera.h"
 
-namespace chapter6 {
+namespace chapter7 {
 
     /**
      * Surface Normals
      */
-    void chapter6_antialiasing() {
+    void chapter7_diffuse_materials() {
         std::ofstream image;
-        image.open("./artifacts/chapter6.ppm");
+        image.open("./artifacts/chapter7.ppm");
 
         int NX = 256;
         int NY = 256;
@@ -26,13 +26,15 @@ namespace chapter6 {
         Ray ray;
         auto camera = new Camera();
 
-        Hittable *list[4];
-        list[0] = new Sphere(vec3(0.5, 0, -1), 0.25);
-        list[1] = new Sphere(vec3(-0.5, 0.5, -0.75), 0.25);
-        list[2] = new Sphere(vec3(0., -0.5, -2), 0.25);
-        list[3] = new Sphere(vec3(0., 0., -1), 0.15);
+        int OBJECTS_COUNT = 3;
+        Hittable *list[OBJECTS_COUNT];
+        list[0] = new Sphere(vec3(0., 0., -2), 0.25);
+        list[1] = new Sphere(vec3(0., -100.25, -2), 100);
+        list[2] = new Sphere(vec3(0.5, 0, -1), 0.25);
+//        list[2] = new Sphere(vec3(0., 0., -1), 0.15);
+//        list[3] = new Sphere(vec3(-0.5, 0.5, -0.75), 0.25);
 
-        auto *world = new HittableList(list, 4);
+        auto *world = new HittableList(list, OBJECTS_COUNT);
         Hit hit;
 
         for (int y = NY - 1; y >= 0; y--) {
@@ -45,7 +47,7 @@ namespace chapter6 {
 
                     ray = camera->getRay(u, v);
 
-                    if (world->hit(ray, 0.00001, MAXFLOAT, hit)) {
+                    if (world->hit(ray, 0, MAXFLOAT, hit)) {
                         color += project_normal_to_color(hit.normal);
                     } else {
                         color += lerp(WHITE, BLUE, (ray.direction.y + 1.) / 2);
