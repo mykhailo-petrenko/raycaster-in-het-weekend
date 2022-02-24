@@ -13,6 +13,11 @@ using namespace glm;
 class Ray {
 public:
     Ray() {}
+    /**
+     *
+     * @param a {vec3} Origin
+     * @param b {vec3} Direction
+     */
     Ray(const vec3 &a, const vec3 &b) {
         origin = a;
         direction = normalize(b - a);
@@ -38,7 +43,7 @@ public:
     virtual bool hit(Ray &r, float tMin, float tMax, Hit &hit) = 0;
 };
 
-class HittableList : Hittable {
+class HittableList : public Hittable {
 public:
     HittableList() {}
     HittableList(Hittable **l, int n) {

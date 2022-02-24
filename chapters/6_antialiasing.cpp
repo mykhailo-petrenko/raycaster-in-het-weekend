@@ -7,25 +7,6 @@
 #include "../camera.h"
 
 namespace chapter6 {
-    bool is_hits_sphere(Ray r, Sphere sphere) {
-        float a = dot(r.direction, r.direction);
-        float b = 2. * dot(r.direction, r.origin - sphere.center);
-        float c = dot(r.origin - sphere.center, r.origin - sphere.center) - (sphere.radius * sphere.radius);
-
-        return quad_equation_has_solution(a, b, c);
-    }
-
-    vec3 intersection_normal(Ray r, Sphere sphere) {
-        float a = dot(r.direction, r.direction);
-        float b = 2. * dot(r.direction, r.origin - sphere.center);
-        float c = dot(r.origin - sphere.center, r.origin - sphere.center) - (sphere.radius * sphere.radius);
-
-        vec<2, float> x = quad_equation(a, b, c);
-
-        vec3 normal = normalize(r.point(x[0]) - sphere.center);
-
-        return normal;
-    }
 
     /**
      * Surface Normals
@@ -64,7 +45,7 @@ namespace chapter6 {
 
                     ray = camera->getRay(u, v);
 
-                    if (world->hit(ray, 0., MAXFLOAT, hit)) {
+                    if (world->hit(ray, 0.00001, MAXFLOAT, hit)) {
                         color += project_normal_to_color(hit.normal);
                     } else {
                         color += lerp(WHITE, BLUE, (ray.direction.y + 1.) / 2);
