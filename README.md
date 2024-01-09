@@ -29,7 +29,9 @@ conan profile detect --force
 conan install . --output-folder=build --build=missing
 ```
 
+[Conan 2 tutorial](https://docs.conan.io/2/tutorial/consuming_packages/build_simple_cmake_project.html)
+
 ### CLion integration 
-Please read and follow instruction https://docs.conan.io/2/integrations/clion.html# to set up the Conan plugin.
+Please read and follow instruction https://docs.conan.io/2/integrations/clion.html to set up the Conan plugin.
 Then "Edit Configuration" > "Add new configuration" > "CMake Application"
 And enjoy.
