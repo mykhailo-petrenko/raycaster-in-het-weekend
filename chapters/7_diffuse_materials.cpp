@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <fstream>
+#include <spdlog/spdlog.h>
 #include "../util.h"
 #include "../camera.h"
 
@@ -77,6 +78,8 @@ namespace chapter7 {
         }
 
         image.close();
+
+        SPDLOG_INFO("./artifacts/chapter7.ppm");
     }
 
 }
