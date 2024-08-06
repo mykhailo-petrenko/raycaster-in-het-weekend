@@ -3,8 +3,8 @@
 //
 #include <iostream>
 #include <fstream>
-#include "../util.h"
-#include "../camera.h"
+#include "../core/util.h"
+#include "../core/camera.h"
 
 namespace chapter6 {
 

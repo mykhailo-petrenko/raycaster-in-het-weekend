@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <fstream>
-#include "../util.h"
+#include "../core/util.h"
 
 void chapter3_ray_and_background() {
     std::ofstream image;

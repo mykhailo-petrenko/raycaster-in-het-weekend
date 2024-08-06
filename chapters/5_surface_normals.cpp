@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <fstream>
-#include "../util.h"
+#include "../core/util.h"
 
 namespace chapter5 {
     bool is_hits_sphere(Ray r, Sphere sphere) {

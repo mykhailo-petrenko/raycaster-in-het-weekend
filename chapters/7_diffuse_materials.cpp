@@ -4,8 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include <spdlog/spdlog.h>
-#include "../util.h"
-#include "../camera.h"
+#include "../core/util.h"
+#include "../core/camera.h"
 
 namespace chapter7 {
 

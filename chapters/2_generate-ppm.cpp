@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#include "../util.h"
+#include "../core/util.h"
 
 void generate_test_ppm() {
     ofstream test_ppm;
