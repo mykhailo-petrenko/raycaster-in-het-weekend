@@ -2,8 +2,8 @@
 // Created by Mykhailo Petrenko on 18.02.2022.
 //
 #include <iostream>
-#include <fstream>
 #include "../core/util.h"
+#include "../bitmap/bitmap_image.hpp"
 
 
 /**
@@ -35,15 +35,13 @@ float ray_with_sphere_intersection_depth(Ray r, Sphere sphere) {
  * The sphere color amount depends on how far from center ray intersects the sphere.
 */
 void chapter4_ray_and_sphere() {
-    std::ofstream image;
-    image.open("./artifacts/chapter4.ppm");
+    std::string out_path("./artifacts/chapter4.bmp");
 
-    int NX = 256;
-    int NY = 256;
+    const int NX = 256;
+    const int NY = 256;
 
-    image << "P3\n" << NX << " " << NY << "\n255\n";
+    bitmap_image image(NX, NY);
 
-    color3 rgb;
     Ray ray;
     vec3 origin = vec3(0.,0.,0.);
     vec3 width = vec3(2.,0.,0.);
@@ -74,10 +72,9 @@ void chapter4_ray_and_sphere() {
             c = lerp(c, vec3(0.,0.,1.), k3);
 
             color3 rgb = project_color_vector(c);
-            image << rgb[0] << " " << rgb[1] << " " << rgb[2] << "\n";
+            image.set_pixel(x, NY-y-1, rgb[0], rgb[1], rgb[2]);
         }
     }
 
-
-    image.close();
+    image.save_image(out_path);
 }

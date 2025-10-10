@@ -2,8 +2,8 @@
 // Created by Mykhailo Petrenko on 21.02.2022.
 //
 
-#ifndef RAYCASTER_IN_HET_WEEKEND_CAMERA_H
-#define RAYCASTER_IN_HET_WEEKEND_CAMERA_H
+#ifndef RAYCASTER_IN_HET_WEEKEND_CAMERA_HPP
+#define RAYCASTER_IN_HET_WEEKEND_CAMERA_HPP
 #import "hittable.hpp"
 class Camera {
 public:
@@ -24,4 +24,4 @@ public:
     vec3 lower_left;
 };
 
-#endif //RAYCASTER_IN_HET_WEEKEND_CAMERA_H
+#endif //RAYCASTER_IN_HET_WEEKEND_CAMERA_HPP

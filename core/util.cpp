@@ -12,11 +12,11 @@ int project_color(float c) {
 }
 
 color3 project_color_vector(vec3 c) {
-    return color3(
+    return {
             project_color(c[0]),
             project_color(c[1]),
             project_color(c[2])
-            );
+            };
 }
 
 vec3 project_normal_to_color(vec3 n) {

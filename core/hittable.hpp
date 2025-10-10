@@ -10,10 +10,17 @@
 
 using namespace glm;
 
+/**
+ * @class Ray
+ *
+ * Represents a ray in 3D space with an `origin` and a `direction`.
+ */
 class Ray {
 public:
-    Ray() {}
+    Ray() = default;
+
     /**
+     * Construct a Ray from two points.
      *
      * @param a {vec3} Origin
      * @param b {vec3} Direction
@@ -23,39 +30,65 @@ public:
         direction = normalize(b - a);
     }
 
-    vec3 point(float t) {
+    /**
+     * Get the Point along the the ray at distance `t` from the `origin` point
+     * @param t
+     * @return
+     */
+    vec3 point(float t) const {
         return origin + t * direction;
     }
 
-    vec3 origin;
-    vec3 direction;
+    // The starting point of the ray.
+    vec3 origin{};
+    // The normalized direction unit-vector.
+    vec3 direction{};
 };
 
-
+/**
+ * Ray-object single intersection
+ */
 struct Hit {
+    // Distance along the ray (from ray origin) where intersection happens
     float t;
+    // World-space position of the intersection
     vec3 point;
+    // Surface normal at the intersection point
     vec3 normal;
 };
 
+
+/**
+ * Object that can be "hit" by Ray
+ */
 class Hittable {
 public:
     virtual bool hit(Ray &r, float tMin, float tMax, Hit &hit) = 0;
 };
 
+/**
+ * A collection of hittable objects (e.g. spheres, planes, etc.)
+ */
 class HittableList : public Hittable {
 public:
-    HittableList() {}
+    HittableList() = default;
+
+    /**
+     * Construct list from a pointer to an array of hittable objects and its size
+     *
+     * @param l
+     * @param n
+     */
     HittableList(Hittable **l, int n) {
         list = l;
         size = n;
     }
 
-    Hittable **list;
-    int size;
+    Hittable **list{};
+    int size{};
 
     bool hit(Ray &r, float tMin, float tMax, Hit &hit) override {
-        Hit tempHit;
+        Hit tempHit{};
 
         bool isHitAnything = false;
         float closest = tMax;

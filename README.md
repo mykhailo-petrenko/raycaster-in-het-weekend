@@ -5,17 +5,17 @@
 
 ## Log by chapters
 ### Chapter 7. Diffuse material
-![Chapter 6](doc/chapter7.jpg)
+![Chapter 6](artifacts/chapter7.bmp)
 ### Chapter 6. Antialiasing 
-![Chapter 6](doc/chapter6.jpg)
+![Chapter 6](artifacts/chapter6.bmp)
 ### Chapter 5. Display Surface normal as a color 
-![Chapter 5](doc/chapter5.jpg)
+![Chapter 5](artifacts/chapter5.bmp)
 ### Chapter 4. Define Ray class and Sphere
-![Chapter 4](doc/chapter4.jpg)
+![Chapter 4](artifacts/chapter4.bmp)
 ### Chapter 3. Add simple camera and make background
-![Chapter 3](doc/chapter3.jpg)
+![Chapter 3](artifacts/chapter3.bmp)
 ### Chapter 2. Generate PPM image
-![Chapter 2](doc/chapter2.jpg)
+![Chapter 2](artifacts/chapter2.bmp)
 
 ## Prerequisites
 Conan 2.x

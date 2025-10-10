@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include "../core/util.h"
+#include "../bitmap/bitmap_image.hpp"
 
 namespace chapter5 {
     bool is_hits_sphere(Ray r, Sphere sphere) {
@@ -30,13 +31,13 @@ namespace chapter5 {
      * Surface Normals
      */
     void chapter5_surface_normals() {
-        std::ofstream image;
-        image.open("./artifacts/chapter5.ppm");
+        std::string out_path("./artifacts/chapter5.bmp");
+
 
         int NX = 256;
         int NY = 256;
 
-        image << "P3\n" << NX << " " << NY << "\n255\n";
+        bitmap_image image(NX, NY);
 
         color3 rgb;
         Ray ray;
@@ -71,12 +72,12 @@ namespace chapter5 {
                 }
 
                 color3 rgb = project_color_vector(color);
-                image << rgb[0] << " " << rgb[1] << " " << rgb[2] << "\n";
+                image.set_pixel(x, NY-y-1, rgb[0], rgb[1], rgb[2]);
             }
         }
 
 
-        image.close();
+        image.save_image(out_path);
     }
 
 }

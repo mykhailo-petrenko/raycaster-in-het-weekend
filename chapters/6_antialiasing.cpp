@@ -4,7 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include "../core/util.h"
-#include "../core/camera.h"
+#include "../core/camera.hpp"
+#include "../bitmap/bitmap_image.hpp"
 
 namespace chapter6 {
 
@@ -12,15 +13,14 @@ namespace chapter6 {
      * Surface Normals
      */
     void chapter6_antialiasing() {
-        std::ofstream image;
-        image.open("./artifacts/chapter6.ppm");
+        std::string out_path("./artifacts/chapter6.bmp");
 
         int NX = 256;
         int NY = 256;
 
         int NS = 20;
 
-        image << "P3\n" << NX << " " << NY << "\n255\n";
+        bitmap_image image(NX, NY);
 
         color3 rgb;
         Ray ray;
@@ -55,12 +55,13 @@ namespace chapter6 {
                 color /= float(NS);
 
                 color3 rgb = project_color_vector(color);
-                image << rgb[0] << " " << rgb[1] << " " << rgb[2] << "\n";
+                image.set_pixel(x, NY-y-1, rgb[0], rgb[1], rgb[2]);
             }
         }
 
+        free(camera);
 
-        image.close();
+        image.save_image(out_path);
     }
 
 }
