@@ -1,5 +1,8 @@
-cmake_minimum_required(VERSION 3.24)
-project(raycaster_in_het_weekend)
+cmake_minimum_required(VERSION 3.15)
+project(raycaster_in_het_weekend CXX)
+
+# Add Conan build directory to CMAKE_PREFIX_PATH for find_package
+list(PREPEND CMAKE_PREFIX_PATH "${CMAKE_BINARY_DIR}")
 
 set(CMAKE_CXX_STANDARD 17)
 
