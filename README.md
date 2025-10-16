@@ -35,3 +35,5 @@ conan install . --output-folder=build --build=missing
 Please read and follow instruction https://docs.conan.io/2/integrations/clion.html to set up the Conan plugin.
 Then "Edit Configuration" > "Add new configuration" > "CMake Application"
 And enjoy.
+
+P.S. Do not forget to set up Conan executable or Use Conan installed in the system.
